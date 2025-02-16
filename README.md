@@ -18,7 +18,7 @@
 
 ## Disclaimer
 
-**TriviaBot Classic** is **not** the original creation of [Original Creator's Name](https://www.curseforge.com/wow/addons/trivia-bot). This project serves as a community-driven fork aimed at improving the addon's functionality within the constraints imposed by Blizzard’s API changes.
+**TriviaBot Original** can be found at https://www.curseforge.com/wow/addons/trivia-bot. This project serves as a community-driven fork aimed at improving the addon's functionality within the constraints imposed by Blizzard’s API changes.
 
 **All rights, trademarks, and logos belong to their respective owners.** This project is intended for personal use and modification by the WoW Classic community.
 
