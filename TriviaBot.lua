@@ -867,30 +867,27 @@ function TriviaBot.EndQuestion(showAnswer)
     -- Stop accepting answers
     TB_Accept_Answers = false
 
-    -- Disable the skip button (no question to skip now)
+    -- Disable skip button
     if (TriviaBotGUI.SkipButton) then
         TriviaBotGUI.SkipButton:Disable()
     end
 
-    -- Increment the round counter if finite
-    TB_Round_Counter = (TB_Round_Counter or 0) + 1
-
-    -- If showAnswer is true, broadcast the correct answer
+    -- Optionally reveal the correct answer or just say "Time's up!"
     if (showAnswer and TriviaBot_Config['Show_Answers']) then
         TriviaBot.PrintAnswers()
     end
 
-    -- If you previously ended the round automatically after N questions,
-    -- you can now require a manual click "End Round" or "Stop Trivia".
-    -- So we don't schedule anything. It's fully manual.
+        -- If you previously ended the round automatically after N questions,
+        -- you can now require a manual click "End Round" or "Stop Trivia".
+        -- So we don't schedule anything. It's fully manual.
 
-    -- If you like, you can manually check if TB_Round_Counter == TriviaBot_Config['Round_Size']
-    -- Then print a local message telling the user they can press "Stop Trivia" or "Show Scores."
-    if (TriviaBot_Config['Round_Size'] ~= TB_Infinite_Round 
-        and TB_Round_Counter >= TriviaBot_Config['Round_Size']) then
+        -- If you like, you can manually check if TB_Round_Counter == TriviaBot_Config['Round_Size']
+        -- Then print a local message telling the user they can press "Stop Trivia" or "Show Scores."
+        if (TriviaBot_Config['Round_Size'] ~= TB_Infinite_Round
+            and TB_Round_Counter >= TriviaBot_Config['Round_Size']) then
 
-        TriviaBot.Print("Round is finished! Click 'Stop Trivia' or 'Show Scores'.")
-    end
+            TriviaBot.Print("Round is finished! Click 'Stop Trivia' or 'Show Scores'.")
+        end
 end
 
 
